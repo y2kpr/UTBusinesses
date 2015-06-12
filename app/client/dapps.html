@@ -1,0 +1,13 @@
+<head>
+  <title>State of the DApps</title>
+</head>
+
+<body>
+  <h1>State of the DApps</h1>
+
+  {{> dappList}}
+</body>
+
+<template name="dappList">
+  {{> tabular table=TabularTables.Dapps class="table table-striped table-bordered table-condensed"}}
+</template>
