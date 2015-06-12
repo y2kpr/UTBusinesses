@@ -24,5 +24,5 @@ TabularTables.Dapps = new Tabular.Table({
     {data: "last_update", title: "Last&nbsp;Update"},
   ],
   pageLength: 25,
-  order: [[ 6, 'desc' ]]
+  order: [[6, 'desc'], [7, 'desc']]
 });
