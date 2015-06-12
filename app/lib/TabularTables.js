@@ -5,10 +5,11 @@ TabularTables = {};
 Meteor.isClient && Template.registerHelper('TabularTables', TabularTables);
 
 TabularTables.Dapps = new Tabular.Table({
+  autoWidth: false,
   name: "DappList",
   collection: Dapps,
   columns: [
-    {data: "name", title: "Name"},
+    {data: "name", title: "DAPP&nbsp;Name"},
     {data: "description", title: "Description"},
     {
       data: "url",
@@ -20,7 +21,7 @@ TabularTables.Dapps = new Tabular.Table({
     {data: "license", title: "License"},
     {data: "platform", title: "Platform"},
     {data: "status", title: "Status"},
-    {data: "last_update", title: "Last Update"},
+    {data: "last_update", title: "Last&nbsp;Update"},
   ],
   pageLength: 25,
   order: [[ 6, 'desc' ]]
