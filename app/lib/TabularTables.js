@@ -23,6 +23,9 @@ TabularTables.Dapps = new Tabular.Table({
     {data: "status", title: "Status"},
     {data: "last_update", title: "Last&nbsp;Update"},
   ],
-  pageLength: 25,
-  order: [[6, 'desc'], [7, 'desc']]
+  language: {
+    emptyTable: "Loading..."
+  },
+  order: [[6, 'desc'], [7, 'desc']],
+  pageLength: 25
 });
