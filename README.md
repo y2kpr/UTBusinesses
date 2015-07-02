@@ -14,12 +14,15 @@ Ensure you have [Meteor](https://www.meteor.com/install) installed.
 
 To run the app:
 
-    $ cd app
     $ meteor
 
 Open your web browser and go to [http://localhost:3000](http://localhost:3000) to see the app running.
 
 ## Sync tool
+
+Go the the tool directory:
+
+    $ cd private/sync
 
 Install the Python requirements:
 
