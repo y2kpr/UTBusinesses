@@ -17,10 +17,12 @@ def sync_sheet(worksheet, db):
         print(cell_list)
 
         if row_nr > 0:
-            name, description, url, contact, tags, license, platform, status, last_update = cell_list
+            name, description, url, github, reddit, contact, tags, license, platform, status, last_update = cell_list
             db.dapps.update({'name': name}, {'$set': {
                 'description': description,
                 'url': url,
+                'github': github,
+                'reddit': reddit,
                 'contact': contact,
                 'tags': tags,
                 'license': license,
