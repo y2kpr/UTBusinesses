@@ -18,6 +18,7 @@ def sync_sheet(worksheet, db):
 
         if row_nr > 0:
             name, description, url, github, reddit, contact, tags, license, platform, status, last_update = cell_list
+            tags = [tag.strip() for tag in tags.split(',')]
             db.dapps.update({'name': name}, {'$set': {
                 'description': description,
                 'url': url,
