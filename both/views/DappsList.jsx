@@ -31,7 +31,7 @@ DappsList = React.createClass({
       // but on the client use the search query
       searchQuery = Session.get('searchQuery') || "";
       // if the query is long enough, search regex pattern in all searchable fields
-      if(searchQuery.length > 2){
+      if(searchQuery.length > 0){
         query = {$or:[]}
         for (var i = 0; i < this.searchFields.length; i++) {
           var thisField = {}
@@ -50,7 +50,7 @@ DappsList = React.createClass({
   // update client side query on keyup
   handleKeyup: _.debounce(function(){
     Session.set('searchQuery', this.refs.searchBox.getDOMNode().value);
-  }, 300),
+  }, 200),
 
   renderDapps() {
     // Get dapps from this.data.dapps, map the key
@@ -65,18 +65,20 @@ DappsList = React.createClass({
   render() {
     return (
       <div>
-        <header className="center-align">
-          <h1>State of the Dapps</h1>
-        </header>
-        <section>
-          <div className="row">
-          <div className="input-field col s12">
-            <i className="fa fa-fw fa-search prefix"></i>
-            <input ref="searchBox" onKeyUp={this.handleKeyup} type="text" className="search-box"></input>
-            <label>Search</label>
-          </div>
-          </div>
-        </section>
+        <div className="container">
+          <header className="center-align">
+            <h1>State of the Dapps</h1>
+          </header>
+          <section>
+            <div className="row">
+              <div className="input-field col s12">
+                <i className="fa fa-fw fa-search prefix"></i>
+                <input ref="searchBox" onKeyUp={this.handleKeyup} type="text" className="search-box"></input>
+                <label>Search</label>
+              </div>
+            </div>
+          </section>
+        </div>
         <main className="dapps section row">
           {this.renderDapps()}
         </main>
