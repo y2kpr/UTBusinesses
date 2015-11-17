@@ -4,14 +4,8 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-aldeed:tabular
-nemo64:bootstrap
-less
-fortawesome:fontawesome
-dburles:collection-helpers
-standard-minifiers
 meteor-base
-mobile-experience
+standard-minifiers
 mongo
 blaze-html-templates
 session
@@ -23,3 +17,14 @@ random
 ejson
 spacebars
 check
+mobile-experience
+less
+react
+
+materialize:materialize
+kadira:flow-router-ssr
+kadira:react-layout
+
+# dev only
+msavin:mongol
+
