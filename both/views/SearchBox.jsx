@@ -1,6 +1,7 @@
 SearchBox = React.createClass({
 
   handleKeyup: _.debounce(function(){
+    Session.set('lastResult', chunkSize)
     Session.set('searchQuery', this.refs.searchBox.getDOMNode().value);
   }, 200),
 

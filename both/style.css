@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200|Open+Sans:400,300,700);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
 
 html {
@@ -18,9 +18,11 @@ b {
 /* header */
 
 header h1{
+  font-family: 'Work Sans', sans-serif;
   font-size:3rem;
-  font-weight:300;
-  letter-spacing:3px;
+  font-weight:200;
+  letter-spacing:0.3rem;
+  text-transform: uppercase;
 }
 
 /* search bar */
@@ -33,11 +35,18 @@ input[type=text].search-box{
 }
 
 /* clear cols */
-@media only screen and (min-width: 601px) {
-  .row .col.m4:nth-child(3n+1){
+@media only screen and (max-width: 690px) {
+  .row .col.ms12{
+    width:100%;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .row .col.ms12:nth-child(3n+1){
     clear:left;
   }
 }
+
 @media only screen and (min-width: 993px) {
   .row .col.l3:nth-child(3n+1){
     clear:inherit;
@@ -84,7 +93,7 @@ input[type=text].search-box{
   margin:2px;
   position:relative;
   padding-bottom:30px;
-  height:210px;
+  height:200px;
 }
 .dapps.row .col{
   padding:0;
@@ -129,6 +138,7 @@ input[type=text].search-box{
 }
 .dapp-card .card-description{
   line-height: 18px;
+  font-size: 13px;
 }
 .dapp-card .icon-link{
   font-size:1.6rem;
@@ -155,7 +165,7 @@ input[type=text].search-box{
     line-height: 40px;
   }
   header h1{
-    font-size:2rem;
+    font-size:1.6rem;
     margin:15px 0px;
   }
   input[type=text].search-box{

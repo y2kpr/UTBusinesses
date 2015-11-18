@@ -16,10 +16,10 @@ Dapp = React.createClass({
   ],
 
   render() {
-    var statusColor = this.statusColors[parseInt(this.props.dapp.status[0])]
+    var statusColor = this.statusColors[parseInt(this.props.dapp.status[0])];
     var link = this.props.dapp.url || this.props.dapp.github || this.props.dapp.reddit;
     return (
-      <div className="col s12 m4 l3 xl2 xxl1">
+      <div className="col ms12 m4 l3 xl2 xxl1">
         <div className={"card hoverable dapp-card " + statusColor}>
           <div className="card-content">
             <div className="main-section center-align">
