@@ -1,4 +1,4 @@
-chunkSize = 36; // this % 12 == 0
+chunkSize = 24; // this % 12 == 0
 var blocksInAdvance = 6; // if the browser is this close to the bottom we will load more
 
 if (typeof Session != 'undefined') {
@@ -73,6 +73,10 @@ DappsList = React.createClass({
     window.removeEventListener('scroll', this.handleScroll);
   },
 
+  scrollToTop() {
+    window.scrollTo(500, 0);
+  },
+
   renderDapps() {
     // Get dapps from this.data.dapps, map the key
     return this.data.dapps.map((dapp) => {
@@ -85,6 +89,9 @@ DappsList = React.createClass({
   render() {
     return (
       <div>
+        <div onClick={this.scrollToTop} className='scroll-to-top'>
+          <i className='fa fa-fw fa-arrow-up'></i>
+        </div>
         <div ref='navArea' className="header-container container">
           <header className="center-align">
             <h1>State of the Ðapps</h1>

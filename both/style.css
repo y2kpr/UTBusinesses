@@ -204,3 +204,19 @@ input[type=text].search-box{
 .slim-chip b{
   font-size:11px;
 }
+
+
+.scroll-to-top{
+  position:fixed;
+  z-index:20;
+  bottom:10px;
+  right:10px;
+  height:40px;
+  width:40px;
+  line-height:40px;
+  font-size:20px;
+  text-align: center;
+  color:white;
+  background:rgba(255,255,255,.5);
+  border-radius: 5px;
+}
