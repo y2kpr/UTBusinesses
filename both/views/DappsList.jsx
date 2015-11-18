@@ -1,15 +1,6 @@
-FlowRouter.route("/", { // SSR
-  action() {
-    name: "home",
-    ReactLayout.render(DappsList, {})
-  }
-})
-
-Meteor.startup(function(){
-  if (typeof Session != 'undefined') {
-    Session.set('searchQuery', '')
-  }
-})
+if (typeof Session != 'undefined') {
+  Session.set('searchQuery', '')
+}
 
 // Dapps component - represents the whole app at the moment
 DappsList = React.createClass({
@@ -41,16 +32,10 @@ DappsList = React.createClass({
       };
     };
 
-    if(handle.ready()) {
-      data.dapps = Dapps.find(query, { sort: sort }).fetch();
-    }
+    data.dapps = Dapps.find(query, { sort: sort }).fetch();
+
     return data;
   },
-
-  // update client side query on keyup
-  handleKeyup: _.debounce(function(){
-    Session.set('searchQuery', this.refs.searchBox.getDOMNode().value);
-  }, 200),
 
   renderDapps() {
     // Get dapps from this.data.dapps, map the key
@@ -61,7 +46,6 @@ DappsList = React.createClass({
     });
   },
 
-  // TODO move search box into it's own component
   render() {
     return (
       <div>
@@ -70,13 +54,7 @@ DappsList = React.createClass({
             <h1>State of the Dapps</h1>
           </header>
           <section>
-            <div className="row">
-              <div className="input-field col s12">
-                <i className="fa fa-fw fa-search prefix"></i>
-                <input ref="searchBox" onKeyUp={this.handleKeyup} type="text" className="search-box"></input>
-                <label>Search</label>
-              </div>
-            </div>
+            <SearchBox />
           </section>
         </div>
         <main className="dapps section row">
