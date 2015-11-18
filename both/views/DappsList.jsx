@@ -65,7 +65,7 @@ DappsList = React.createClass({
   render() {
     return (
       <div>
-        <div className="container">
+        <div className="header-container container">
           <header className="center-align">
             <h1>State of the Dapps</h1>
           </header>

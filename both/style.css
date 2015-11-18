@@ -5,6 +5,9 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-weight:300;
 }
+body{
+  background: #FAFAFA;
+}
 b {
   font-weight:700;
 }
@@ -44,6 +47,32 @@ input[type=text].search-box{
   }
 }
 
+/* custom xl2 rule */
+
+@media only screen and (min-width: 1440px) {
+  .row .col.xl2{
+    width:16.6666%;
+  }
+  .row .col.xl2:nth-child(4n+1){
+    clear:inherit;
+  }
+  .row .col.xl2:nth-child(6n+1){
+    clear:left;
+  }
+}
+
+/* custom xxl1 rule */
+
+@media only screen and (min-width: 2400px) {
+  .row .col.xxl1{
+    width:8.3333%;
+  }
+  .row .col.xxl1:nth-child(6n+1){
+    clear:inherit;
+  }
+}
+
+
 
 /* dapp cards */
 
@@ -55,6 +84,7 @@ input[type=text].search-box{
   margin:2px;
   position:relative;
   padding-bottom:30px;
+  height:210px;
 }
 .dapps.row .col{
   padding:0;
@@ -66,7 +96,7 @@ input[type=text].search-box{
 }
 .dapp-card a{
   color:black;
-  opacity:0.6;
+  opacity:0.8;
 }
 .dapp-card.white-text a{
   color:white;
@@ -97,6 +127,9 @@ input[type=text].search-box{
   right:15px;
   font-size:0.9rem;
 }
+.dapp-card .card-description{
+  line-height: 18px;
+}
 .dapp-card .icon-link{
   font-size:1.6rem;
   margin-bottom:5px;
@@ -104,14 +137,50 @@ input[type=text].search-box{
 .dapp-card .icon-row{
   padding-top:10px;
 }
+.dapp-card .icon-row a:hover{
+  border-bottom: none;
+}
 
 @media only screen and (max-width: 600px) {
+
   .dapp-card{
     margin-bottom:0;
+    height:auto;
+    padding-bottom:5px;
+  }
+  .header-container .row{
+    margin-bottom:0px;
+  }
+  .dapp-card .card-content .card-title {
+    line-height: 40px;
+  }
+  header h1{
+    font-size:2rem;
+    margin:15px 0px;
+  }
+  input[type=text].search-box{
+    font-size:18px;
+  }
+  .dapp-card .main-section{
+    text-align: left;
+  }
+  .dapp-card .status-section{
+    position:inherit;
+    left:auto;
+    right:auto;
+  }
+  .dapp-card .icon-row{
+    position:absolute;
+    top:5px;
+    right:10px;
+  }
+  .dapp-card .icon-row{
+    text-align: right;
   }
   .dapp-card .card-content{
     padding:5px 10px;
   }
+
 }
 
 
