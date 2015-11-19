@@ -14,6 +14,11 @@ b {
 .truncate{
   max-width:100%;
 }
+/*fix modal*/
+#react-root > div{
+  position: relative;
+}
+
 
 /* header */
 
@@ -25,6 +30,19 @@ header h1{
   text-transform: uppercase;
 }
 
+/* footer */
+footer{
+  z-index:100;
+  font-family: 'Source Code Pro', monospace;
+  transition: .3s font-size;
+  padding:10px;
+  font-size:12px;
+}
+footer.white-text a{
+  color:#ddd;
+  border-bottom:1px dotted rgba(255,255,255,.6);
+}
+
 /* search bar */
 i.fa.prefix{
   font-size: 1.5rem;
@@ -33,7 +51,30 @@ i.fa.prefix{
 input[type=text].search-box{
   font-size: 2rem;
 }
-
+.search-area{
+  position:relative;
+  /*margin-right:43px;*/
+}
+.search-area .submit-new{
+  position: absolute;
+  right:10px;
+  top:16px;
+  font-size:24px;
+  line-height:43px;
+  width:43px;
+  height:43px;
+  cursor:pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition:.2s color;
+}
+.search-area .submit-new:hover{
+  color:#39A7FF;
+}
+.search-area .input-field{
+  padding-right:45px;
+}
 /* clear cols */
 @media only screen and (max-width: 690px) {
   .row .col.ms12{
@@ -93,7 +134,11 @@ input[type=text].search-box{
   margin:2px;
   position:relative;
   padding-bottom:30px;
+  color:black;
   height:200px;
+}
+.dapps{
+  margin-bottom:0;
 }
 .dapps.row .col{
   padding:0;
@@ -210,7 +255,7 @@ input[type=text].search-box{
   position:fixed;
   cursor:pointer;
   z-index:20;
-  bottom:10px;
+  bottom:20px;
   right:10px;
   height:40px;
   width:40px;
@@ -221,3 +266,14 @@ input[type=text].search-box{
   background:rgba(255,255,255,.5);
   border-radius: 5px;
 }
+
+
+
+
+
+/* DARK MODE */
+/*body, footer{
+  background:black;
+  color:white;
+}
+*//* END DARK MODE */

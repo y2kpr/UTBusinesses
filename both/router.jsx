@@ -4,3 +4,7 @@ FlowRouter.route("/", { // SSR
     ReactLayout.render(DappsList, {})
   }
 })
+
+if(Meteor.isServer){
+  FlowRouter.setDeferScriptLoading(true);
+}
