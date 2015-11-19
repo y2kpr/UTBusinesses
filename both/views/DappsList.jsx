@@ -139,6 +139,7 @@ DappsList = React.createClass({
             </div>
           </div>
         </footer>
+        < SubmitModal />
       </div>
     );
   }
