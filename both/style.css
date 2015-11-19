@@ -1,0 +1,279 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200|Open+Sans:400,300,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+}
+body{
+  background: #FAFAFA;
+}
+b {
+  font-weight:700;
+}
+.truncate{
+  max-width:100%;
+}
+/*fix modal*/
+#react-root > div{
+  position: relative;
+}
+
+
+/* header */
+
+header h1{
+  font-family: 'Work Sans', sans-serif;
+  font-size:3rem;
+  font-weight:200;
+  letter-spacing:0.3rem;
+  text-transform: uppercase;
+}
+
+/* footer */
+footer{
+  z-index:100;
+  font-family: 'Source Code Pro', monospace;
+  transition: .3s font-size;
+  padding:10px;
+  font-size:12px;
+}
+footer.white-text a{
+  color:#ddd;
+  border-bottom:1px dotted rgba(255,255,255,.6);
+}
+
+/* search bar */
+i.fa.prefix{
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+input[type=text].search-box{
+  font-size: 2rem;
+}
+.search-area{
+  position:relative;
+  /*margin-right:43px;*/
+}
+.search-area .submit-new{
+  position: absolute;
+  right:10px;
+  top:16px;
+  font-size:24px;
+  line-height:43px;
+  width:43px;
+  height:43px;
+  cursor:pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition:.2s color;
+}
+.search-area .submit-new:hover{
+  color:#39A7FF;
+}
+.search-area .input-field{
+  padding-right:45px;
+}
+/* clear cols */
+@media only screen and (max-width: 690px) {
+  .row .col.ms12{
+    width:100%;
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .row .col.ms12:nth-child(3n+1){
+    clear:left;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .row .col.l3:nth-child(3n+1){
+    clear:inherit;
+  }
+  .row .col.l3:nth-child(4n+1){
+    clear:left;
+  }
+}
+
+/* custom xl2 rule */
+
+@media only screen and (min-width: 1440px) {
+  .row .col.xl2{
+    width:16.6666%;
+  }
+  .row .col.xl2:nth-child(4n+1){
+    clear:inherit;
+  }
+  .row .col.xl2:nth-child(6n+1){
+    clear:left;
+  }
+}
+
+/* custom xxl1 rule */
+
+@media only screen and (min-width: 2400px) {
+  .row .col.xxl1{
+    width:8.3333%;
+  }
+  .row .col.xxl1:nth-child(6n+1){
+    clear:inherit;
+  }
+}
+
+
+
+/* dapp cards */
+
+
+.dapp-card{
+  border-radius:3px;
+  border:1px solid rgba(0,0,0,0);
+  box-shadow:none;
+  margin:2px;
+  position:relative;
+  padding-bottom:30px;
+  color:black;
+  height:200px;
+}
+.dapps{
+  margin-bottom:0;
+}
+.dapps.row .col{
+  padding:0;
+}
+
+.dapp-card:hover{
+  box-shadow:none;
+  border:1px solid rgba(0,0,0,.15);
+}
+.dapp-card a{
+  color:black;
+  opacity:0.8;
+}
+.dapp-card.white-text a{
+  color:white;
+}
+.dapp-card a:hover{
+  opacity:1;
+  border-bottom:1px dotted black;
+}
+.dapp-card.white-text a:hover{
+  border-color:white;
+}
+.dapp-card .card-content{
+  padding:10px 10px 40px 10px;
+}
+.dapp-card .card-title{
+  line-height:38px;
+}
+.dapp-card .card-subtitle{
+  font-weight:700;
+}
+.dapp-card .status-section{
+  padding-bottom:0px;
+  padding-top:5px;
+  line-height:24px;
+  position:absolute;
+  bottom:10px;
+  left:15px;
+  right:15px;
+  font-size:0.9rem;
+}
+.dapp-card .card-description{
+  line-height: 18px;
+  font-size: 13px;
+}
+.dapp-card .icon-link{
+  font-size:1.6rem;
+  margin-bottom:5px;
+}
+.dapp-card .icon-row{
+  padding-top:10px;
+}
+.dapp-card .icon-row a:hover{
+  border-bottom: none;
+}
+
+@media only screen and (max-width: 690px) {
+
+  .dapp-card{
+    margin-bottom:0;
+    height:auto;
+    padding-bottom:5px;
+  }
+  .header-container .row{
+    margin-bottom:0px;
+  }
+  .dapp-card .card-content .card-title {
+    line-height: 40px;
+  }
+  header h1{
+    font-size:1.6rem;
+    margin:15px 0px;
+  }
+  input[type=text].search-box{
+    font-size:18px;
+  }
+  .dapp-card .main-section{
+    text-align: left;
+  }
+  .dapp-card .status-section{
+    position:inherit;
+    left:auto;
+    right:auto;
+  }
+  .dapp-card .icon-row{
+    position:absolute;
+    top:5px;
+    right:10px;
+  }
+  .dapp-card .icon-row{
+    text-align: right;
+  }
+  .dapp-card .card-content{
+    padding:5px 10px;
+  }
+
+}
+
+
+.slim-chip{
+  font-size:12px;
+  height:24px;
+  line-height:24px;
+  padding:0px 8px;
+  font-weight:400;
+}
+.slim-chip b{
+  font-size:11px;
+}
+
+
+.scroll-to-top{
+  position:fixed;
+  cursor:pointer;
+  z-index:20;
+  bottom:20px;
+  right:10px;
+  height:40px;
+  width:40px;
+  line-height:40px;
+  font-size:20px;
+  text-align: center;
+  color:white;
+  background:rgba(255,255,255,.5);
+  border-radius: 5px;
+}
+
+
+
+
+
+/* DARK MODE */
+/*body, footer{
+  background:black;
+  color:white;
+}
+*//* END DARK MODE */
