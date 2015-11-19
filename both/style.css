@@ -19,6 +19,12 @@ b {
   position: relative;
 }
 
+/* fix input label */
+.input-field label{
+  pointer-events:none;
+}
+
+
 
 /* header */
 
@@ -28,6 +34,17 @@ header h1{
   font-weight:200;
   letter-spacing:0.3rem;
   text-transform: uppercase;
+}
+
+/*modal*/
+.modal .row{
+  margin-bottom:0;
+}
+.modal .input-field input[type=text]{
+  margin-bottom:10px;
+}
+.modal .input-field .character-counter{
+  margin-top:-5px;
 }
 
 /* footer */
@@ -51,9 +68,10 @@ i.fa.prefix{
 input[type=text].search-box{
   font-size: 2rem;
 }
+
 .search-area{
   position:relative;
-  /*margin-right:43px;*/
+  margin-right:43px;
 }
 .search-area .submit-new{
   position: absolute;
