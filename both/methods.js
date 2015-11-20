@@ -21,7 +21,7 @@ Meteor.methods({
       status: ShortString
     });
 
-    data.timestamp = new Date();
+    data.timestamp = new Date().toLocaleString();
 
     if(Meteor.isServer){
       Email.send({
