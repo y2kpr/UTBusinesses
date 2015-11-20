@@ -3,8 +3,8 @@ FlowRouter.route("/", { // SSR
     name: "home",
     ReactLayout.render(DappsList, {})
   }
-})
+});
 
 if(Meteor.isServer){
   FlowRouter.setDeferScriptLoading(true);
-}
+};

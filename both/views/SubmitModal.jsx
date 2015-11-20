@@ -25,9 +25,8 @@ SubmitModal = React.createClass({
 
   componentDidMount() {
     $('input',this.refs.submissionForm.getDOMNode()).each(function(){
-      $(this).attr('length', $(this).attr('maxlength')).characterCounter()
-    })
-    // $('select',this.refs.submissionForm.getDOMNode()).material_select()
+      $(this).attr('length', $(this).attr('maxlength')).characterCounter();
+    });
   },
 
 

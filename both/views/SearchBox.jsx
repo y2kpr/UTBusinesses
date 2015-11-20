@@ -1,12 +1,12 @@
 SearchBox = React.createClass({
 
   handleKeyup: _.debounce(function(){
-    Session.set('lastResult', initialSize)
+    Session.set('lastResult', initialSize);
     Session.set('searchQuery', this.refs.searchBox.getDOMNode().value);
   }, 200),
 
   componentDidMount() {
-    $(this.refs.modalButton.getDOMNode()).leanModal()
+    $(this.refs.modalButton.getDOMNode()).leanModal();
   },
 
   render(){ 

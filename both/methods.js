@@ -30,6 +30,6 @@ Meteor.methods({
         subject: "New Dapp Submitted - " + data.dapp_name,
         text: "Dapp needs to be approved and added manually:\n\n" + EJSON.stringify(data,null,2)
       });
-    }
+    };
   }
 })
