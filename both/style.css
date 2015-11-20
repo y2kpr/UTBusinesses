@@ -46,6 +46,10 @@ header h1{
 .modal .input-field .character-counter{
   margin-top:-5px;
 }
+/* 3d transform for mobile smoothness */
+.modal *{
+  transform: translate3d(0, 0%, 0);
+}
 
 /* footer */
 footer{

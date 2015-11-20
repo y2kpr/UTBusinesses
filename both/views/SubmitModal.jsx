@@ -27,7 +27,7 @@ SubmitModal = React.createClass({
     $('input',this.refs.submissionForm.getDOMNode()).each(function(){
       $(this).attr('length', $(this).attr('maxlength')).characterCounter()
     })
-    $('select',this.refs.submissionForm.getDOMNode()).material_select()
+    // $('select',this.refs.submissionForm.getDOMNode()).material_select()
   },
 
 
@@ -88,18 +88,17 @@ SubmitModal = React.createClass({
             </div>
             <div className='row'>
               <div className="input-field col s12 m6">
-                <select name="status">
-                  <option value="" disabled defaultValue>Select One</option>
-                  <option value="1">Abandoned</option>
-                  <option value="2">On Hold</option>
-                  <option value="3">Stealth Mode</option>
-                  <option value="4">Concept</option>
-                  <option value="5">Work In Progress</option>
-                  <option value="6">Demo</option>
-                  <option value="7">Working Prototype</option>
-                  <option value="8">Live</option>
+                <select className='browser-default validate' required name="status">
+                  <option value="" defaultValue>Project Status</option>
+                  <option value="1. Abandoned">Abandoned</option>
+                  <option value="2. On Hold">On Hold</option>
+                  <option value="3. Stealth Mode">Stealth Mode</option>
+                  <option value="4. Concept">Concept</option>
+                  <option value="5. Work In Progress">Work In Progress</option>
+                  <option value="6. Demo">Demo</option>
+                  <option value="7. Working Prototype">Working Prototype</option>
+                  <option value="8. Live">Live</option>
                 </select>
-                <label>Project Status *</label>
               </div>
               <div className="input-field col s12 m6">
                 <input ref='antiSpam'  className='anti-spam validate' required type="text" maxLength="3"/>
