@@ -260,7 +260,6 @@ input[type=text].search-box{
 
 }
 
-
 .slim-chip{
   font-size:12px;
   height:24px;
@@ -268,10 +267,10 @@ input[type=text].search-box{
   padding:0px 8px;
   font-weight:400;
 }
+
 .slim-chip b{
   font-size:11px;
 }
-
 
 .scroll-to-top{
   position:fixed;
@@ -288,14 +287,3 @@ input[type=text].search-box{
   background:rgba(255,255,255,.5);
   border-radius: 5px;
 }
-
-
-
-
-
-/* DARK MODE */
-/*body, footer{
-  background:black;
-  color:white;
-}
-*//* END DARK MODE */
