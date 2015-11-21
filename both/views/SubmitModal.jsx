@@ -32,13 +32,15 @@ App.SubmitModal = React.createClass({
   render () {
     return (
       <div id='submitModal' className='modal'>
-        <form ref='submissionForm' onSubmit={this.handleSubmit}>
-          <div className='modal-content'>
+        <div className='modal-content'>
+          <div className='row slim-row center-align'>
             <h4>Submit a Dapp</h4>
             <p>
               Complete the form below or email <a href='mailto:dapps@ethercasts.com' target='_blank'>dapps@ethercasts.com</a>
             </p>
-            <div className='row'>
+          </div>
+          <form ref='submissionForm' onSubmit={this.handleSubmit}>
+            <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='dapp_name' type='text' required maxLength='32'/>
                 <label>Dapp Name *</label>
@@ -48,7 +50,7 @@ App.SubmitModal = React.createClass({
                 <label>Dapp Description *</label>
               </div>
             </div>
-            <div className='row'>
+            <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='contact' type='text' required maxLength='32'/>
                 <label>Author Name *</label>
@@ -58,7 +60,7 @@ App.SubmitModal = React.createClass({
                 <label>Author Email *</label>
               </div>
             </div>
-            <div className='row'>
+            <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input name='site' type='text' maxLength='64'/>
                 <label>Site URL</label>
@@ -68,7 +70,7 @@ App.SubmitModal = React.createClass({
                 <label>Reddit URL</label>
               </div>
             </div>
-            <div className='row'>
+            <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input name='github' type='text' maxLength='64'/>
                 <label>GitHub URL</label>
@@ -78,7 +80,7 @@ App.SubmitModal = React.createClass({
                 <label>License</label>
               </div>
             </div>
-            <div className='row'>
+            <div className='row slim-row'>
               <div className='input-field col s12'>
                 <input name='tags' type='text' maxLength='128'/>
                 <label>Tags (comma seperated)</label>
@@ -103,12 +105,13 @@ App.SubmitModal = React.createClass({
                 <label>Anti Spam: 40 + 2 = ?</label>
               </div>
             </div>
-          </div>
-          <div className='modal-footer'>
-            <button type='submit' className='waves-effect waves-blue btn light-blue'>Submit</button>
-            <a href='#' className='modal-action modal-close waves-effect waves-green btn-flat'>Cancel</a>
-          </div>
-        </form>
+            <div className='row center-align slim-row'>
+              <a href='#' className='modal-action modal-close waves-effect waves-green btn-flat'>Cancel</a>
+              &nbsp;&nbsp;
+              <button type='submit' className='waves-effect waves-blue btn light-blue'>Submit</button>
+            </div>
+          </form>
+        </div>
       </div>
     )
   }
