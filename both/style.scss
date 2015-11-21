@@ -1,0 +1,208 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200|Open+Sans:400,300,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:300;
+}
+body{
+  background: #FAFAFA;
+}
+b {
+  font-weight:700;
+}
+
+header h1{
+  font-family: 'Work Sans', sans-serif;
+  font-size:3rem;
+  font-weight:200;
+  letter-spacing:0.3rem;
+  text-transform: uppercase;
+}
+
+footer{
+  z-index:100;
+  font-family: 'Source Code Pro', monospace;
+  transition: .3s font-size;
+  padding:10px;
+  font-size:12px;
+}
+footer.white-text a{
+  color:#ddd;
+  border-bottom:1px dotted rgba(255,255,255,.6);
+}
+
+/* search bar */
+.search-area{
+  position:relative;
+  margin-right:43px;
+
+  i.fa.prefix{
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+  input[type=text].search-box{
+    font-size: 2rem;
+  }
+  .submit-new{
+    position: absolute;
+    right:10px;
+    top:16px;
+    font-size:24px;
+    line-height:43px;
+    width:43px;
+    height:43px;
+    cursor:pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition:.2s color;
+  }
+  .submit-new:hover{
+    color:#39A7FF;
+  }
+  .input-field{
+    padding-right:45px;
+  }
+}
+
+.dapps{
+  margin-bottom:0;
+  > .col {
+    padding:0;
+  }
+}
+
+/* individual dapp card */
+.dapp-card {
+  border-radius:3px;
+  border:1px solid rgba(0,0,0,0);
+  box-shadow:none;
+  margin:2px;
+  position:relative;
+  padding-bottom:30px;
+  color:black;
+  height:200px;
+  &:hover {
+    box-shadow:none;
+    border:1px solid rgba(0,0,0,.15);
+  }
+  a {
+    color:black;
+    opacity:0.8;
+  }
+  &.white-text a {
+    color:white;
+  }
+  a:hover {
+    opacity:1;
+    border-bottom:1px dotted black;
+  }
+  &.white-text a:hover {
+    border-color:white;
+  }
+  .card-content {
+    padding:10px 10px 40px 10px;
+  }
+  .card-title {
+    line-height:38px;
+  }
+  .card-subtitle {
+    font-weight:700;
+  }
+  .status-section {
+    padding-bottom:0px;
+    padding-top:5px;
+    line-height:24px;
+    position:absolute;
+    bottom:10px;
+    left:15px;
+    right:15px;
+    font-size:0.9rem;
+  }
+  .card-description {
+    line-height: 18px;
+    font-size: 13px;
+  }
+  .icon-link {
+    font-size:1.6rem;
+    margin-bottom:5px;
+  }
+  .icon-row {
+    padding-top:10px;
+  }
+  .icon-row a:hover {
+    border-bottom: none;
+  }
+}
+
+.slim-chip{
+  font-size:12px;
+  height:24px;
+  line-height:24px;
+  padding:0px 8px;
+  font-weight:400;
+  b{
+    font-size:11px;
+  }
+}
+
+.scroll-to-top{
+  position:fixed;
+  cursor:pointer;
+  z-index:20;
+  bottom:20px;
+  right:10px;
+  height:40px;
+  width:40px;
+  line-height:40px;
+  font-size:20px;
+  text-align: center;
+  color:white;
+  background:rgba(255,255,255,.5);
+  border-radius: 5px;
+}
+
+/* responsive overrides */
+@media only screen and (max-width: 690px) {
+
+  header h1{
+    font-size:1.6rem;
+    margin:15px 0px;
+  }
+  input[type=text].search-box{
+    font-size:18px;
+  }
+  .header-container .row{
+    margin-bottom:0px;
+  }
+
+  .dapp-card{
+    margin-bottom:0;
+    height:auto;
+    padding-bottom:5px;
+
+    .card-content .card-title {
+      line-height: 40px;
+    }
+    .main-section{
+      text-align: left;
+    }
+    .status-section{
+      position:inherit;
+      left:auto;
+      right:auto;
+    }
+    .icon-row{
+      position:absolute;
+      top:5px;
+      right:10px;
+    }
+    .icon-row{
+      text-align: right;
+    }
+    .card-content{
+      padding:5px 10px;
+    }
+  }
+}

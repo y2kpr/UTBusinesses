@@ -18,15 +18,14 @@ ejson
 spacebars
 check
 mobile-experience
-less
 email
-react@=0.1.12
 ecmascript
+react@=0.1.12
 
 materialize:materialize
 kadira:flow-router-ssr
 kadira:react-layout
+fourseven:scss
 
 # dev only
 msavin:mongol
-

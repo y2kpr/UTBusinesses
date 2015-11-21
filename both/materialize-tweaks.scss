@@ -1,0 +1,51 @@
+.truncate{
+  max-width:100%;
+}
+
+/* fix input label receiving click events */
+.input-field label{
+  pointer-events:none;
+}
+
+/* fix modal positioning with react container */
+#react-root > div{
+  position: relative;
+}
+
+/* better modal positioning */
+.modal{
+  form .row{
+    margin-bottom:0;
+  }
+  .input-field input[type=text]{
+    margin-bottom:10px;
+  }
+  .input-field .character-counter{
+    margin-top:-5px;
+  }
+  /* 3d transform modal contents for mobile smoothness when scrolling */
+  *{
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+/* custom column rules */
+@media only screen and (max-width: 690px) {
+  .row .col.ms12{
+    width:100%;
+  }
+}
+
+/* custom xl2 rule */
+@media only screen and (min-width: 1440px) {
+  .row .col.xl2{
+    width:16.6666%;
+  }
+}
+
+/* custom xxl1 rule */
+@media only screen and (min-width: 2400px) {
+  .row .col.xxl1{
+    width:8.3333%;
+  }
+}
