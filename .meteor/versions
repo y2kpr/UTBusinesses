@@ -28,6 +28,7 @@ ecmascript-runtime@0.2.6
 ejson@1.0.7
 email@1.0.8
 fastclick@1.0.7
+fourseven:scss@3.4.1
 geojson-utils@1.0.4
 hot-code-push@1.0.0
 html-tools@1.0.5
@@ -40,7 +41,6 @@ kadira:flow-router-ssr@3.6.0
 kadira:react-layout@1.4.1
 lai:collection-extensions@0.1.4
 launch-screen@1.0.4
-less@2.5.1
 livedata@1.0.15
 localstorage@1.0.5
 logging@1.0.8

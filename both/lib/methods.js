@@ -1,12 +1,13 @@
-Meteor.methods({
-  "newSubmission": function(data){
+/* globals check, Match, Email, EJSON */
 
+Meteor.methods({
+  newSubmission: function (data) {
     // validate the data before emailing it out
     // TODO rate limit?
     var ShortString = Match.Where(function (x) {
-      check(x, String);
-      return x.length <= 128;
-    });
+      check(x, String)
+      return x.length <= 128
+    })
 
     check(data, {
       dapp_name: ShortString,
@@ -19,17 +20,17 @@ Meteor.methods({
       license: ShortString,
       tags: ShortString,
       status: ShortString
-    });
+    })
 
-    data.timestamp = new Date().toLocaleString();
+    data.timestamp = new Date().toLocaleString()
 
-    if(Meteor.isServer){
+    if (Meteor.isServer) {
       Email.send({
         to: process.env.MAIL_TO,
         from: process.env.MAIL_FROM,
-        subject: "New Dapp Submitted - " + data.dapp_name,
-        text: "Dapp needs to be approved and added manually:\n\n" + EJSON.stringify(data,null,2)
-      });
-    };
+        subject: `New Dapp Submitted - ${data.dapp_name}`,
+        text: `eDapp needs to be approved and added manually:\n\n ${EJSON.stringify(data, null, 2)}`
+      })
+    }
   }
 })

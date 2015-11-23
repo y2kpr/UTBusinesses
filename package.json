@@ -1,0 +1,11 @@
+{
+  "standard": {
+    "globals": [
+      "App",
+      "Meteor",
+      "React",
+      "$",
+      "_"
+    ]
+  }
+}

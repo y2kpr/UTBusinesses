@@ -1,10 +1,11 @@
-FlowRouter.route("/", { // SSR
-  action() {
-    name: "home",
-    ReactLayout.render(DappsList, {})
-  }
-});
+/* globals FlowRouter, ReactLayout */
 
-if(Meteor.isServer){
-  FlowRouter.setDeferScriptLoading(true);
-};
+FlowRouter.route('/', {
+  action () {
+    ReactLayout.render(App.DappsList, {})
+  }
+})
+
+if (Meteor.isServer) {
+  FlowRouter.setDeferScriptLoading(true)
+}
