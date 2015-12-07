@@ -117,6 +117,7 @@ App.DappsList = React.createClass({
             < App.SearchBox />
           </section>
         </div>
+        < App.InfoModal />
         <section ref='dappSection' className='dapps section row black'>
           {this.renderDapps()}
         </section>
