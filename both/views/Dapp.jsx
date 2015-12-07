@@ -50,7 +50,7 @@ App.Dapp = React.createClass({
               <p className='pull-right'>
                   {this.props.dapp.last_update}
               </p>
-              <p>
+              <p className='status truncate'>
                 {this.props.dapp.status.substring(3)}
               </p>
             </div>
