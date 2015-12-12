@@ -18,7 +18,7 @@ App.DappsList = React.createClass({
   // This mixin makes the getMeteorData method work
   mixins: [ReactMeteorData],
   // fields in mongo to use in search query
-  searchFields: ['name', 'description', 'tags', 'contact'],
+  searchFields: ['name', 'description', 'tags', 'contact', 'license'],
   // Loads items from the Dapps collection and puts them on this.data.dapps
   getMeteorData () {
     var data = {}
