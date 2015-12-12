@@ -23,11 +23,10 @@ header h1{
 footer{
   z-index:100;
   font-family: 'Source Code Pro', monospace;
-  transition: .3s font-size;
   padding:10px;
   font-size:12px;
 }
-footer.white-text a{
+footer.white-text a, .filter-area a{
   color:#ddd;
   border-bottom:1px dotted rgba(255,255,255,.6);
 }
@@ -44,7 +43,7 @@ footer.white-text a{
   input[type=text].search-box{
     font-size: 2rem;
   }
-  .submit-new{
+  .search-button{
     position: absolute;
     right:10px;
     top:16px;
@@ -57,12 +56,13 @@ footer.white-text a{
     -moz-user-select: none;
     user-select: none;
     transition:.2s color;
-  }
-  .submit-new:hover{
-    color:#39A7FF;
+
+    &:hover{
+      color:#39A7FF;
+    }
   }
   .input-field{
-    padding-right:45px;
+    padding-right:53px;
   }
 }
 
@@ -70,6 +70,20 @@ footer.white-text a{
   margin-bottom:0;
   > .col {
     padding:0;
+  }
+}
+
+/* filter area */
+
+.filter-area{
+  font-family: 'Source Code Pro', monospace;
+  font-size:11px;
+  & > .col{
+    padding: 5px 10px;
+  }
+  .sort-direction{
+    cursor:pointer;
+    padding: 2px 7px;
   }
 }
 
@@ -83,6 +97,7 @@ footer.white-text a{
   padding-bottom:30px;
   color:black;
   height:200px;
+  min-height:12rem;
   &:hover {
     box-shadow:none;
     border:1px solid rgba(0,0,0,.15);
@@ -121,7 +136,7 @@ footer.white-text a{
     font-size:0.9rem;
   }
   .card-description {
-    line-height: 18px;
+    line-height: 1.3rem;
     font-size: 13px;
   }
   .icon-link {
@@ -180,6 +195,7 @@ footer.white-text a{
   .dapp-card{
     margin-bottom:0;
     height:auto;
+    min-height:0;
     padding-bottom:5px;
 
     .card-content .card-title {
@@ -204,5 +220,38 @@ footer.white-text a{
     .card-content{
       padding:5px 10px;
     }
+  }
+}
+
+/* Modal */
+
+#infoModal{
+  h3{
+    font-size:2rem;
+  }
+  h4{
+    font-size:1.4rem;
+  }
+  .flow-text{
+    font-size:1.2rem;
+    margin-bottom:10px;
+  }
+  .section{
+    padding-top:1.5rem;
+    padding-bottom:0;
+  }
+  .divider{
+    margin-bottom:1rem;
+  }
+}
+
+.color-list{
+  li{
+    padding:8px;
+    border-radius:2px;
+    box-shadow:inset 0px 0px 4px rgba(0,0,0,.5);
+    margin-bottom:3px;
+    text-align: center;
+    font-weight:bold;
   }
 }

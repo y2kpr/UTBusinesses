@@ -8,7 +8,7 @@ App.SearchBox = React.createClass({
   }, 200),
 
   componentDidMount () {
-    $(this.refs.modalButton.getDOMNode()).leanModal()
+    $(this.refs.infoButton.getDOMNode()).leanModal()
   },
 
   render () {
@@ -19,7 +19,7 @@ App.SearchBox = React.createClass({
           <input ref='searchBox' onKeyUp={this.handleKeyup} type='text' className='search-box'></input>
           <label>Search</label>
         </div>
-        <i ref='modalButton' className='fa fa-fw fa-plus submit-new' data-target='submitModal'></i>
+        <i ref='infoButton' className='fa fa-fw fa-info-circle info-button search-button' data-target='infoModal'></i>
       </div>
     )
   }

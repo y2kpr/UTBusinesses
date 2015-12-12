@@ -27,5 +27,7 @@ kadira:flow-router-ssr
 kadira:react-layout
 fourseven:scss
 
+fastclick
+
 # dev only
 msavin:mongol
