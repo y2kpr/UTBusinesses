@@ -81,15 +81,9 @@ footer.white-text a, .filter-area a{
   & > .col{
     padding: 5px 10px;
   }
-  span.filter-item{
-    display:inline-block;
-    white-space: nowrap;
-    &:last-child{
-      margin-left:1em;
-    }
-  }
   .sort-direction{
     cursor:pointer;
+    padding: 2px 7px;
   }
 }
 
