@@ -28,8 +28,9 @@ Meteor.methods({
       Email.send({
         to: process.env.MAIL_TO,
         from: process.env.MAIL_FROM,
+        replyTo: data.contact_email,
         subject: `New Dapp Submitted - ${data.dapp_name}`,
-        text: `eDapp needs to be approved and added manually:\n\n ${EJSON.stringify(data, null, 2)}`
+        text: `Dapp needs to be approved and added manually:\n\n ${EJSON.stringify(data, null, 2)}`
       })
     }
   }
