@@ -66,7 +66,7 @@ App.SubmitModal = React.createClass({
                 <label>Site URL</label>
               </div>
               <div className='input-field col s12 m6'>
-                <input name='reddit' type='text' maxLength='64'/>
+                <input name='reddit' type='text' maxLength='128'/>
                 <label>Reddit URL</label>
               </div>
             </div>
@@ -76,8 +76,8 @@ App.SubmitModal = React.createClass({
                 <label>GitHub URL</label>
               </div>
               <div className='input-field col s12 m6'>
-                <input name='license' type='text' maxLength='10'/>
-                <label>License</label>
+                <input name='license' type='text' required maxLength='10'/>
+                <label>License *</label>
               </div>
             </div>
             <div className='row slim-row'>
