@@ -30,6 +30,7 @@ App.SubmitModal = React.createClass({
   },
 
   render () {
+    // Rendering the submit a D-app form
     return (
       <div id='submitModal' className='modal'>
         <div className='modal-content'>

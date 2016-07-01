@@ -5,7 +5,7 @@ from oauth2client.client import GoogleCredentials
 import os
 from pymongo import MongoClient
 
-DAPPS_SHEET_KEY = '1VdRMFENPzjL2V-vZhcc_aa5-ysf243t5vXlxC2b054g'
+DAPPS_SHEET_KEY = 'qnWAfr4IxmZi-JPAhaCZ5L43ChAQWFh2QQSYXwVCkM'
 MONGODB_URL = os.getenv('MONGODB_URL', 'mongodb://127.0.0.1:3001/meteor')
 
 def sync_sheet(worksheet, db):
@@ -38,7 +38,7 @@ def main():
     credentials = credentials.create_scoped(['https://spreadsheets.google.com/feeds'])
     gc = gspread.authorize(credentials)
 
-    sh = gc.open_by_key(DAPPS_SHEET_KEY)
+    sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1AqnWAfr4IxmZi-JPAhaCZ5L43ChAQWFh2QQSYXwVCkM/edit#gid=0')
     worksheet = sh.get_worksheet(0)
 
     client = MongoClient(MONGODB_URL)
