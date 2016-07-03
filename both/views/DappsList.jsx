@@ -102,6 +102,7 @@ App.DappsList = React.createClass({
   renderDapps () {
     if (this.data.dapps.length) {
       return this.data.dapps.map(dapp => {
+          // App.Dapp is the name of react class
         return <App.Dapp
           key={dapp._id}
           dapp={dapp} />
@@ -123,7 +124,7 @@ App.DappsList = React.createClass({
         </div>
         <div ref='navArea' className='header-container container'>
           <header className='center-align'>
-            <h1>State of the Ðapps</h1>
+            <h1>State of UT Businesses</h1>
           </header>
           <section>
             < App.SearchBox />

@@ -47,7 +47,7 @@ App.FilterArea = React.createClass({
         {this.props.data.dapps.length &&
           <div className='filter-area white-text'>
             <div className='col s5'>
-              {this.props.data.count} dapps {this.props.data.resultType}
+              {this.props.data.count} Businesses {this.props.data.resultType}
             </div>
             <div className='col s7 right-align'>
               Sort: <a href='#' onClick={this.handleToggleType}>{this.sortType()}</a>
