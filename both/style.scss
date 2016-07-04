@@ -66,7 +66,7 @@ footer.white-text a, .filter-area a{
   }
 }
 
-.dapps{
+.businesses{
   margin-bottom:0;
   > .col {
     padding:0;
@@ -87,8 +87,8 @@ footer.white-text a, .filter-area a{
   }
 }
 
-/* individual dapp card */
-.dapp-card {
+/* individual business card */
+.business-card {
   border-radius:3px;
   border:1px solid rgba(0,0,0,0);
   box-shadow:none;
@@ -192,7 +192,7 @@ footer.white-text a, .filter-area a{
     margin-bottom:0px;
   }
 
-  .dapp-card{
+  .business-card{
     margin-bottom:0;
     height:auto;
     min-height:0;

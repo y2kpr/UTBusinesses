@@ -2,7 +2,7 @@
 
 FlowRouter.route('/', {
   action () {
-    ReactLayout.render(App.DappsList, {})
+    ReactLayout.render(App.BusinessesList, {})
   }
 })
 

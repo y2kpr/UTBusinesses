@@ -18,12 +18,12 @@ if (Meteor.isClient) {
   var $window = $(window)
 }
 
-App.DappsList = React.createClass({
+App.BusinessesList = React.createClass({
   // This mixin makes the getMeteorData method work
   mixins: [ReactMeteorData],
   // fields in mongo to use in search query
   searchFields: ['name', 'description', 'tags', 'contact', 'license', 'status'],
-  // Loads items from the Dapps collection and puts them on this.data.dapps
+  // Loads items from the Businesses collection and puts them on this.data.businesses
   getMeteorData () {
     var data = {}
     var query = {}
@@ -32,7 +32,7 @@ App.DappsList = React.createClass({
     var limit = App.initialBatchSize
     var searchQuery = ''
     // subscribe to the data source, server and client
-    Meteor.subscribe('dapps')
+    Meteor.subscribe('businesses')
     // CLIENT ONLY
     if (typeof Session !== 'undefined') {
       // Use the search query if one exists
@@ -53,15 +53,15 @@ App.DappsList = React.createClass({
         }
       }
     }
-    data.dapps = App.cols.Dapps.find(query, { sort: sort, limit: limit }).fetch()
-    data.count = App.cols.Dapps.find(query).count()
+    data.businesses = App.cols.Businesses.find(query, { sort: sort, limit: limit }).fetch()
+    data.count = App.cols.Businesses.find(query).count()
     data.resultType = searchQuery.length > 0 ? 'found' : 'listed'
     return data
   },
 
   // infinite scrolling
   loadMoreItems () {
-    var childCount = $('.col', this.refs.dappSection.getDOMNode()).size()
+    var childCount = $('.col', this.refs.businessesection.getDOMNode()).size()
     var sessionGetLastResult = Session.get('lastResult')
     // don't try to load more items until we've matched the last request, or never fire if done
     if (childCount >= sessionGetLastResult) {
@@ -71,7 +71,7 @@ App.DappsList = React.createClass({
 
   handleScroll: _.debounce(function () {
     // get the position of `blocksInAdvance` blocks before it ends
-    var $lastItem = $('.col:last-child', this.refs.dappSection.getDOMNode())
+    var $lastItem = $('.col:last-child', this.refs.businessesection.getDOMNode())
     var targetPosition = Math.round($lastItem.offset().top - ($lastItem.height() * blocksInAdvance))
     if ($window.scrollTop() + $window.height() >= targetPosition) {
       this.loadMoreItems()
@@ -80,7 +80,7 @@ App.DappsList = React.createClass({
 
   componentDidUpdate () {
     // check to see if screen is fully populated
-    var $lastItem = $('.col:last-child', this.refs.dappSection.getDOMNode())
+    var $lastItem = $('.col:last-child', this.refs.businessesection.getDOMNode())
     if ($lastItem.size() && Math.floor($lastItem.offset().top) + $lastItem.height() < $window.height()) {
       this.loadMoreItems()
     }
@@ -99,18 +99,18 @@ App.DappsList = React.createClass({
     window.scrollTo(0, 0)
   },
 
-  renderDapps () {
-    if (this.data.dapps.length) {
-      return this.data.dapps.map(dapp => {
-          // App.Dapp is the name of react class
-        return <App.Dapp
-          key={dapp._id}
-          dapp={dapp} />
+  renderBusinesses () {
+    if (this.data.businesses.length) {
+      return this.data.businesses.map(business => {
+          // App.Business is the name of react class
+        return <App.Business
+          key={business._id}
+          business={business} />
       })
     } else {
       return (
         <div className='no-results center-align white-text flow-text section'>
-          <p>No Dapps Found</p>
+          <p>No Businesses Found</p>
         </div>
       )
     }
@@ -135,8 +135,8 @@ App.DappsList = React.createClass({
         <div className='black'>
           <div className='row'>
             < App.FilterArea data={this.data} />
-            <section ref='dappSection' className='dapps row'>
-              {this.renderDapps()}
+            <section ref='businessesection' className='businesses row'>
+              {this.renderBusinesses()}
             </section>
           </div>
           <footer className='white-text center-align'>
@@ -148,7 +148,7 @@ App.DappsList = React.createClass({
                 UI by <a target='_blank' href='http://hitchcott.com'>Hitchcott</a>
               </div>
               <div className='col s12 m4'>
-                Fork me on <a target='_blank' href='https://github.com/EtherCasts/state-of-the-dapps'><i className='fa fa-fw fa-github'></i>GitHub</a>
+                Fork me on <a target='_blank' href='https://github.com/EtherCasts/state-of-the-businesses'><i className='fa fa-fw fa-github'></i>GitHub</a>
               </div>
             </div>
           </footer>

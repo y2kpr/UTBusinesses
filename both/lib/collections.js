@@ -2,12 +2,12 @@
 this.App = {}
 
 App.cols = {
-  Dapps: new Mongo.Collection('dapps')
+  Businesses: new Mongo.Collection('businesses')
 }
 
 if (Meteor.isServer) {
-  Meteor.publish('dapps', function () {
+  Meteor.publish('businesses', function () {
     // TODO limit this to infinite scroll data
-    return App.cols.Dapps.find({})
+    return App.cols.Businesses.find({})
   })
 }
