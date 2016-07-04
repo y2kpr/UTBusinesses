@@ -44,7 +44,7 @@ App.FilterArea = React.createClass({
   render () {
     return (
       <div>
-        {this.props.data.dapps.length &&
+        {this.props.data.businesses.length &&
           <div className='filter-area white-text'>
             <div className='col s5'>
               {this.props.data.count} Businesses {this.props.data.resultType}

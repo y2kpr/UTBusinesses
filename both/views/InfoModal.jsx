@@ -1,6 +1,6 @@
 App.InfoModal = React.createClass({
 
-  clickSubmitDapp (e) {
+  clickSubmitBusiness (e) {
     e.preventDefault()
     $('#infoModal').closeModal({
       complete: function () {
@@ -47,12 +47,12 @@ App.InfoModal = React.createClass({
                 <div className='section'>
                   <h4>What qualifies as a UT Business?</h4>
                   <p> A UT Business is any initiative taken by a UT student or group of students to develop an idea into a working business model. The business can be a work in progress or just a concept or abandoned years ago.<a href='https://en.wikipedia.org/wiki/Block_chain_(database)' target='_blank'>blockchain</a> and <a href='https://en.wikipedia.org/wiki/Smart_contract' target='_blank'>smart contracts</a>.</p>
-                  <p>Most of the projects listed on this page were built using <a href='https://www.ethereum.org' target='_blank'>Ethereum</a> - a popular development platform for creating dapps.</p>
+                  <p>Most of the projects listed on this page were built using <a href='https://www.ethereum.org' target='_blank'>Ethereum</a> - a popular development platform for creating businesses.</p>
                   <p>If you are a UT student and interested in starting your own business, why not contact somebody from  <a href='https://utlea.org' target='_blank'>UT LEA</a>?</p>
                 </div>
                 <div className='section'>
                   <h4>Submit / Update your Business</h4>
-                  <p>If you have started a Business as a student at UT and would like to have it added to <i>State of UT Businesses</i>, please <a onClick={this.clickSubmitDapp} ref='submitModal' href='#'>click here to submit it for approval</a>.</p>
+                  <p>If you have started a Business as a student at UT and would like to have it added to <i>State of UT Businesses</i>, please <a onClick={this.clickSubmitBusiness} ref='submitModal' href='#'>click here to submit it for approval</a>.</p>
                 </div>
               </div>
             </div>
