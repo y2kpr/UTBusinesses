@@ -9,6 +9,8 @@ DAPPS_SHEET_KEY = 'qnWAfr4IxmZi-JPAhaCZ5L43ChAQWFh2QQSYXwVCkM'
 MONGODB_URL = os.getenv('MONGODB_URL', 'mongodb://127.0.0.1:3001/meteor')
 
 def sync_sheet(worksheet, db):
+    db.dapps.drop()
+
     list_of_lists = worksheet.get_all_values()
     print list_of_lists
     row_nr = 0
