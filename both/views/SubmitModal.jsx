@@ -35,7 +35,7 @@ App.SubmitModal = React.createClass({
       <div id='submitModal' className='modal'>
         <div className='modal-content'>
           <div className='row slim-row center-align'>
-            <h4>Submit a Dapp</h4>
+            <h4>Submit a Business</h4>
             <p>
               Complete the form below or email <a href='mailto:dapps@ethercasts.com' target='_blank'>dapps@ethercasts.com</a>
             </p>
@@ -44,21 +44,21 @@ App.SubmitModal = React.createClass({
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='dapp_name' type='text' required maxLength='32'/>
-                <label>Dapp Name *</label>
+                <label>Business Name *</label>
               </div>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='description' type='text' required maxLength='64'/>
-                <label>Dapp Description *</label>
+                <label>Business Description *</label>
               </div>
             </div>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='contact' type='text' required maxLength='32'/>
-                <label>Author Name *</label>
+                <label>Founder(s) Name *</label>
               </div>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='contact_email' type='email' required maxLength='32'/>
-                <label>Author Email *</label>
+                <label>Founder(s) Email *</label>
               </div>
             </div>
             <div className='row slim-row'>
@@ -90,7 +90,7 @@ App.SubmitModal = React.createClass({
             <div className='row'>
               <div className='input-field col s12 m6'>
                 <select className='browser-default validate' required name='status'>
-                  <option value='' defaultValue>Project Status</option>
+                  <option value='' defaultValue>Business Status</option>
                   <option value='1. Abandoned'>Abandoned</option>
                   <option value='2. On Hold'>On Hold</option>
                   <option value='3. Stealth Mode'>Stealth Mode</option>
