@@ -5,10 +5,12 @@ from oauth2client.client import GoogleCredentials
 import os
 from pymongo import MongoClient
 
-DAPPS_SHEET_KEY = 'qnWAfr4IxmZi-JPAhaCZ5L43ChAQWFh2QQSYXwVCkM'
+BUSINESSES_SHEET_KEY = 'qnWAfr4IxmZi-JPAhaCZ5L43ChAQWFh2QQSYXwVCkM'
 MONGODB_URL = os.getenv('MONGODB_URL', 'mongodb://127.0.0.1:3001/meteor')
 
 def sync_sheet(worksheet, db):
+    db.businesses.drop()
+
     list_of_lists = worksheet.get_all_values()
     print list_of_lists
     row_nr = 0
@@ -19,7 +21,7 @@ def sync_sheet(worksheet, db):
         if row_nr > 0:
             name, description, url, github, reddit, contact, tags, license, platform, status, last_update = cell_list
             tags = [tag.strip() for tag in tags.split(',')]
-            db.dapps.update({'name': name}, {'$set': {
+            db.businesses.update({'name': name}, {'$set': {
                 'description': description,
                 'url': url,
                 'github': github,
@@ -43,7 +45,7 @@ def main():
 
     client = MongoClient(MONGODB_URL)
     db = client.get_default_database()
-    db.dapps.ensure_index('name')
+    db.businesses.ensure_index('name')
 
     sync_sheet(worksheet, db)
 

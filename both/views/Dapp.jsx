@@ -1,6 +1,6 @@
-App.Dapp = React.createClass({
+App.Business = React.createClass({
   propTypes: {
-    dapp: React.PropTypes.object.isRequired
+    business: React.PropTypes.object.isRequired
   },
   statusColors: [
     'light-grey', // 0. Unknown
@@ -15,43 +15,43 @@ App.Dapp = React.createClass({
   ],
 
   render () {
-    var statusColor = this.statusColors[parseInt(this.props.dapp.status[0], 10)]
-    var link = this.props.dapp.url || this.props.dapp.github || this.props.dapp.reddit
+    var statusColor = this.statusColors[parseInt(this.props.business.status[0], 10)]
+    var link = this.props.business.url || this.props.business.github || this.props.business.reddit
     return (
       <div className='col ms12 m4 l3 xl2 xxl1'>
-        <div className={'card hoverable dapp-card ' + statusColor}>
+        <div className={'card hoverable business-card ' + statusColor}>
           <div className='card-content'>
             <div className='main-section center-align'>
               <div className='card-title truncate'>
-                {link ? <a target='_blank' href={link}>{this.props.dapp.name}</a>
-                : this.props.dapp.name}
+                {link ? <a target='_blank' href={link}>{this.props.business.name}</a>
+                : this.props.business.name}
               </div>
               <div className='card-subtitle trunchate'>
-                {this.props.dapp.contact}
+                {this.props.business.contact}
               </div>
               <div className='card-description'>
-                <p>{this.props.dapp.description}</p>
+                <p>{this.props.business.description}</p>
               </div>
             </div>
             <div className='section status-section'>
               <p className='icon-row center-align'>
-                { this.props.dapp.github &&
-                  <a target='_blank' href={this.props.dapp.github}>
-                    {this.props.dapp.license}
+                { this.props.business.github &&
+                  <a target='_blank' href={this.props.business.github}>
+                    {this.props.business.license}
                     <i className='icon-link fa fa-fw fa-github'></i>
                   </a>
                 }
-                { this.props.dapp.reddit &&
-                  <a target='_blank' href={this.props.dapp.reddit}>
+                { this.props.business.reddit &&
+                  <a target='_blank' href={this.props.business.reddit}>
                     <i className='icon-link fa fa-fw fa-reddit'></i>
                   </a>
                 }
               </p>
               <p className='pull-right'>
-                  {this.props.dapp.last_update}
+                  {this.props.business.last_update}
               </p>
               <p className='status truncate'>
-                {this.props.dapp.status.substring(3)}
+                {this.props.business.status.substring(3)}
               </p>
             </div>
           </div>
