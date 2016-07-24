@@ -96,7 +96,7 @@ footer.white-text a, .filter-area a{
   position:relative;
   padding-bottom:30px;
   color:black;
-  height:200px;
+  height:400px;
   min-height:12rem;
   &:hover {
     box-shadow:none;
@@ -121,9 +121,10 @@ footer.white-text a, .filter-area a{
   }
   .card-title {
     line-height:38px;
+    font-size: 30px;
   }
   .card-subtitle {
-    font-weight:700;
+    font-weight:500;
   }
   .status-section {
     padding-bottom:0px;
