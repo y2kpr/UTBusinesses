@@ -19,19 +19,17 @@ def sync_sheet(worksheet, db):
         print(cell_list)
 
         if row_nr > 0:
-            name, description, url, github, reddit, contact, tags, license, platform, status, last_update = cell_list
+            business_name, description, founding_date, business_status, hiring_status, site_url, contact_email, tags, founders, last_updated = cell_list
             tags = [tag.strip() for tag in tags.split(',')]
-            db.businesses.update({'name': name}, {'$set': {
+            db.businesses.update({'business_name': business_name}, {'$set': {
                 'description': description,
-                'url': url,
-                'github': github,
-                'reddit': reddit,
-                'contact': contact,
+                'founding_date': founding_date,
+                'business_status': business_status,
+                'hiring_status': hiring_status,
+                'contact_email': contact_email,
                 'tags': tags,
-                'license': license,
-                'platform': platform,
-                'status': status,
-                'last_update': last_update}}, upsert=True)
+                'founders':founders,
+                'last_updated': last_updated}}, upsert=True)
 
         row_nr += 1
 

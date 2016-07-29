@@ -12,14 +12,13 @@ Meteor.methods({
     check(data, {
       business_name: ShortString,
       description: ShortString,
-      contact: ShortString,
+      founding_date: ShortString,
+      business_status: ShortString,
+      hiring_status: ShortString,
       contact_email: ShortString,
-      site: ShortString,
-      reddit: ShortString,
-      github: ShortString,
-      license: ShortString,
       tags: ShortString,
-      status: ShortString
+      founders: ShortString,
+      last_updated: ShortString
     })
 
     data.timestamp = new Date().toLocaleString()

@@ -15,19 +15,19 @@ App.Business = React.createClass({
   ],
 
   render () {
-    var statusColor = this.statusColors[parseInt(this.props.business.status[0], 10)]
-    var link = this.props.business.url || this.props.business.github || this.props.business.reddit
+    var statusColor = this.statusColors[parseInt(this.props.business.business_status[0], 10)]
+    var link = this.props.business.url
     return (
       <div className='col ms12 m4 l3 xl2 xxl1'>
         <div className={'card hoverable business-card ' + statusColor}>
           <div className='card-content'>
             <div className='main-section center-align'>
               <div className='card-title truncate'>
-                {link ? <a target='_blank' href={link}>{this.props.business.name}</a>
-                : this.props.business.name}
+                {link ? <a target='_blank' href={link}>{this.props.business.business_name}</a>
+                : this.props.business.business_name}
               </div>
               <div className='card-subtitle trunchate'>
-                {this.props.business.contact}
+                {this.props.business.contact_email}
               </div>
               <div className='card-description'>
                 <p>{this.props.business.description}</p>
@@ -37,13 +37,7 @@ App.Business = React.createClass({
               <p className='icon-row center-align'>
                 { this.props.business.github &&
                   <a target='_blank' href={this.props.business.github}>
-                    {this.props.business.license}
                     <i className='icon-link fa fa-fw fa-github'></i>
-                  </a>
-                }
-                { this.props.business.reddit &&
-                  <a target='_blank' href={this.props.business.reddit}>
-                    <i className='icon-link fa fa-fw fa-reddit'></i>
                   </a>
                 }
               </p>
