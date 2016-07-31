@@ -15,11 +15,13 @@ Meteor.methods({
       contact: ShortString,
       contact_email: ShortString,
       site: ShortString,
-      reddit: ShortString,
-      github: ShortString,
-      license: ShortString,
+      logo: ShortString,
+      founders: ShortString,
+      founding_date: ShortString,
       tags: ShortString,
-      status: ShortString
+      product_status: ShortString,
+      funding_status: ShortString,
+      hiring_status: ShortString
     })
 
     data.timestamp = new Date().toLocaleString()

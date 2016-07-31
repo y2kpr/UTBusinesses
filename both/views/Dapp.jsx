@@ -3,19 +3,21 @@ App.Business = React.createClass({
     business: React.PropTypes.object.isRequired
   },
   statusColors: [
-    'red darken-2 white-text', // 0. Concept
-    'grey darken-2 white-text', // 1. Work in Progress
-    'amber accent-1', // 2. Working Prototype
-    'amber', // 3. Series A
-    'green accent-1', // 4. Series B
-    'green accent-2', // 5. Series C
+    'grey darken-2 white-text', // 1. Concept
+    'amber accent-1', // 1. Work in Progress
+    'green accent-2', // 2. Working Prototype
     'light-green accent-3' // 6. Done
   ],
 
-  statusNames:[
+  productStatusNames:[
   'Concept',
   'Work in progress',
   'Working prototype',
+  'Live'
+  ],
+
+  fundingStatusNames:[
+  'Bootstrapping',
   'Series A',
   'Series B',
   'Series C',
@@ -23,8 +25,8 @@ App.Business = React.createClass({
   ],
 
   render () {
-    var statusColor = this.statusColors[parseInt(this.props.business.status[0], 10)]
-    var statusName = this.statusNames[parseInt(this.props.business.status[0], 10)]
+    var statusColor = this.statusColors[parseInt(this.props.business.product_status[0], 10) - 1]
+    var statusName = this.productStatusNames[parseInt(this.props.business.product_status[0], 10) - 1]
     var link = this.props.business.url || this.props.business.github || this.props.business.reddit
     return (
       <div className='col ms12 m4 l3 xl4 xxl1'>

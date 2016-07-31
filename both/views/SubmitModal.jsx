@@ -43,7 +43,6 @@ App.SubmitModal = React.createClass({
           <form ref='submissionForm' onSubmit={this.handleSubmit}>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
-                <input className='validate' name='dapp_name' type='text' required maxLength='32'/>
                 <input className='validate' name='business_name' type='text' required maxLength='32'/>
                 <label>Business Name *</label>
               </div>
@@ -55,11 +54,11 @@ App.SubmitModal = React.createClass({
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='contact' type='text' required maxLength='32'/>
-                <label>Founder(s) Name *</label>
+                <label>Contact Name *</label>
               </div>
               <div className='input-field col s12 m6'>
                 <input className='validate' name='contact_email' type='email' required maxLength='32'/>
-                <label>Founder(s) Email *</label>
+                <label>Contact Email *</label>
               </div>
             </div>
             <div className='row slim-row'>
@@ -68,18 +67,21 @@ App.SubmitModal = React.createClass({
                 <label>Site URL</label>
               </div>
               <div className='input-field col s12 m6'>
-                <input name='reddit' type='text' maxLength='128'/>
-                <label>Reddit URL</label>
+                <input name='logo' type='text' maxLength='128'/>
+                <label>Logo (image address)</label>
               </div>
             </div>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
-                <input name='github' type='text' maxLength='64'/>
-                <label>GitHub URL</label>
+                <input name='founders' type='text' maxLength='64'/>
+                <label>Founder(s)</label>
               </div>
               <div className='input-field col s12 m6'>
-                <input name='license' type='text' required maxLength='10'/>
-                <label>License *</label>
+                <input name='founding_date' type='text' required maxLength='10'
+                data-fv-date="true"
+                data-fv-date-format="MM/DD/YYYY"
+                data-fv-date-message="The value is not a valid date" />
+                <label>Founding Date (MM/DD/YYYY)*</label>
               </div>
             </div>
             <div className='row slim-row'>
@@ -90,16 +92,12 @@ App.SubmitModal = React.createClass({
             </div>
             <div className='row'>
               <div className='input-field col s12 m6'>
-                <select className='browser-default validate' required name='status'>
-                  <option value='' defaultValue>Business Status</option>
-                  <option value='1. Abandoned'>Abandoned</option>
-                  <option value='2. On Hold'>On Hold</option>
-                  <option value='3. Stealth Mode'>Stealth Mode</option>
-                  <option value='4. Concept'>Concept</option>
-                  <option value='5. Work In Progress'>Work In Progress</option>
-                  <option value='6. Demo'>Demo</option>
-                  <option value='7. Working Prototype'>Working Prototype</option>
-                  <option value='8. Live'>Live</option>
+                <select className='browser-default validate' required name='product_status'>
+                  <option value='' defaultValue>Product Status</option>
+                  <option value='1. Abandoned'>Concept</option>
+                  <option value='2. On Hold'>Work in Progress</option>
+                  <option value='3. Stealth Mode'>Working Prototype</option>
+                  <option value='4. Concept'>Live</option>
                 </select>
               </div>
               <div className='input-field col s12 m6'>
@@ -107,6 +105,24 @@ App.SubmitModal = React.createClass({
                 <label>Anti Spam: 40 + 2 = ?</label>
               </div>
             </div>
+            <div className='row'>
+              <div className='input-field col s12 m6'>
+                <select className='browser-default validate' required name='funding_status'>
+                  <option value='' defaultValue>Funding Status</option>
+                  <option value='1. Bootstrapping'>Bootstrapping</option>
+                  <option value='2. Series A'>Series A</option>
+                  <option value='3. Series B'>Series B</option>
+                  <option value='4. Series c'>Series C</option>
+                  <option value='5. Done'>Done</option>
+                </select>
+              </div>
+              <div className='input-field col s12 m6'>
+                <input name='hiring_status' type='checkbox' value='off'/>
+                <label>
+                   check if you are hiring
+                </label>
+              </div>
+            </div>0
             <div className='row center-align slim-row'>
               <a href='#' className='modal-action modal-close waves-effect waves-green btn-flat'>Cancel</a>
               &nbsp;&nbsp;
