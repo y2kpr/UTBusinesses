@@ -1,5 +1,9 @@
 App.SubmitModal = React.createClass({
 
+  handleCheck (e){
+    e.value='1'
+  },
+
   handleSubmit (e) {
     e.preventDefault()
     if (this.refs.antiSpam.getDOMNode().value !== '42') {
@@ -20,6 +24,10 @@ App.SubmitModal = React.createClass({
         }
       })
     }
+  },
+
+  handleCheck (e) {
+    return( <popout title='in handleCheck' />);
   },
 
   componentDidMount () {
@@ -94,10 +102,9 @@ App.SubmitModal = React.createClass({
               <div className='input-field col s12 m6'>
                 <select className='browser-default validate' required name='product_status'>
                   <option value='' defaultValue>Product Status</option>
-                  <option value='1. Abandoned'>Concept</option>
-                  <option value='2. On Hold'>Work in Progress</option>
-                  <option value='3. Stealth Mode'>Working Prototype</option>
-                  <option value='4. Concept'>Live</option>
+                  <option value='1. Concept'>Concept</option>
+                  <option value='2. Working Prototype'>Working Prototype</option>
+                  <option value='3. Live'>Live</option>
                 </select>
               </div>
               <div className='input-field col s12 m6'>
@@ -116,13 +123,13 @@ App.SubmitModal = React.createClass({
                   <option value='5. Done'>Done</option>
                 </select>
               </div>
-              <div className='input-field col s12 m6'>
-                <input name='hiring_status' type='checkbox' value='off'/>
-                <label>
-                   check if you are hiring
-                </label>
+              <div className='input-field col s6 m6'>
+                <input type='radio' id='not_hiring' name='hiring_status' value='0' checked='checked'/>
+                <label for='not_hiring'> Not hiring </label>
+                <input type='radio' id='hiring' name='hiring_status' value='1'/>
+                <label for='hiring'> hiring </label>
               </div>
-            </div>0
+            </div>
             <div className='row center-align slim-row'>
               <a href='#' className='modal-action modal-close waves-effect waves-green btn-flat'>Cancel</a>
               &nbsp;&nbsp;
