@@ -3,15 +3,13 @@ App.Business = React.createClass({
     business: React.PropTypes.object.isRequired
   },
   statusColors: [
-    'grey darken-2 white-text', // 1. Concept
-    'amber accent-1', // 1. Work in Progress
+    'amber accent-1', // 1. Concept
     'green accent-2', // 2. Working Prototype
-    'light-green accent-3' // 6. Done
+    'light-green accent-3' // 3. Live
   ],
 
   productStatusNames:[
   'Concept',
-  'Work in progress',
   'Working prototype',
   'Live'
   ],
@@ -27,13 +25,14 @@ App.Business = React.createClass({
   render () {
     var statusColor = this.statusColors[parseInt(this.props.business.product_status[0], 10) - 1]
     var statusName = this.productStatusNames[parseInt(this.props.business.product_status[0], 10) - 1]
-    var link = this.props.business.url || this.props.business.github || this.props.business.reddit
+    var link = this.props.business.url
+    var contact = "mailto:" + this.props.business.contact
     return (
       <div className='col ms12 m4 l3 xl4 xxl1'>
         <div className={'card hoverable business-card ' + statusColor}>
-          <img class='card-img-top center-align' src={this.props.business.logo} height='100' width='100' alt='UT Business'/>
           <div className='card-content'>
             <div className='main-section center-align'>
+              <img class='card-img-top center-align' src={this.props.business.logo} height='100' width='100' alt='UT Business'/>
               <div className='card-title truncate'>
                 {link ? <a target='_blank' href={link}>{this.props.business.name}</a>
                 : this.props.business.name}
@@ -46,18 +45,12 @@ App.Business = React.createClass({
               </div>
             </div>
             <div className='section status-section'>
-              <p className='icon-row center-align'>
-                { this.props.business.github &&
-                  <a target='_blank' href={this.props.business.name}>
-                    {this.props.business.license}
-                    <i className='icon-link fa fa-fw fa-github'></i>
-                  </a>
-                }
-                { this.props.business.reddit &&
-                  <a target='_blank' href={this.props.business.name}>
-                    <i className='icon-link fa fa-fw fa-reddit'></i>
-                  </a>
-                }
+              <p className='center-align'>
+                {this.props.business.hiring_status == '0' ? "not hiring" : "is hiring"}
+                
+              </p>
+              <p className='status truncate center-align'>
+                <a href={contact}>Contact</a>
               </p>
               <p className='pull-right'>
                   {this.props.business.founding_date}
