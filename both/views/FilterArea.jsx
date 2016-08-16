@@ -1,10 +1,11 @@
-/* globals Session */
+/* glob6als Session */
 
-var sortTypes = ['last_update', 'status']
+var sortTypes = [ 'last_update', 'product_status', 'funding_status']
 
 var sortNames = {
   last_update: 'Updated',
-  status: 'Status'
+  product_status: 'Product Status',
+  funding_status: 'Funding Status'
 }
 
 App.FilterArea = React.createClass({

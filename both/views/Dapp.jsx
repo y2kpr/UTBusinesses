@@ -2,11 +2,20 @@ App.Business = React.createClass({
   propTypes: {
     business: React.PropTypes.object.isRequired
   },
-  statusColors: [
+  productStatusColors: [
     'amber accent-1', // 1. Concept
     'green accent-2', // 2. Working Prototype
     'light-green accent-3' // 3. Live
   ],
+
+  fundingStatusColors: [
+    'amber accent-1', // 1. Bootstrapping
+    'teal lighten-3', // 2. Seed
+    'lime lighten-3', // 3. Series A
+    'green darken-3', // 4. Series B
+    'green accent-2', // 5. Series C
+    'light-green accent-3', // 6. Exited
+    ],
 
   productStatusNames:[
   'Concept',
@@ -16,15 +25,16 @@ App.Business = React.createClass({
 
   fundingStatusNames:[
   'Bootstrapping',
+  'Seed',
   'Series A',
   'Series B',
   'Series C',
-  'Done'
+  'Exited'
   ],
 
   render () {
-    var statusColor = this.statusColors[parseInt(this.props.business.product_status[0], 10) - 1]
-    var statusName = this.productStatusNames[parseInt(this.props.business.product_status[0], 10) - 1]
+    var statusColor = Session.equals("searchSortType", "funding_status") ? this.fundingStatusColors[parseInt(this.props.business.funding_status[0], 10) - 1] : this.productStatusColors[parseInt(this.props.business.product_status[0], 10) - 1]
+    var statusName = Session.equals("searchSortType", "funding_status") ? this.fundingStatusNames[parseInt(this.props.business.funding_status[0], 10) - 1] : this.productStatusNames[parseInt(this.props.business.product_status[0], 10) - 1]
     var link = this.props.business.url
     var contact = "mailto:" + this.props.business.contact
     return (

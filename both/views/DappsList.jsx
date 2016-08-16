@@ -22,7 +22,7 @@ App.BusinessesList = React.createClass({
   // This mixin makes the getMeteorData method work
   mixins: [ReactMeteorData],
   // fields in mongo to use in search query
-  searchFields: ['name', 'description', 'tags', 'contact', 'license', 'status'],
+  searchFields: ['name', 'description', 'tags', 'contact', 'status'],
   // Loads items from the Businesses collection and puts them on this.data.businesses
   getMeteorData () {
     var data = {}
