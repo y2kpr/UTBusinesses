@@ -6,7 +6,8 @@ import os
 from pymongo import MongoClient
 
 BUSINESSES_SHEET_KEY = 'qnWAfr4IxmZi-JPAhaCZ5L43ChAQWFh2QQSYXwVCkM'
-MONGODB_URL = os.getenv('MONGODB_URL', 'mongodb://127.0.0.1:3001/meteor')
+# MONGODB_URL = os.getenv('MONGODB_URL', 'mongodb://heroku_0s8qnfjw:blrrlk97cq0t0jh75ahsnng5jf@ds161255.mlab.com:61255/heroku_0s8qnfjw')
+MONGODB_URL = os.environ['MONGODB_URL']
 
 def sync_sheet(worksheet, db):
     db.businesses.drop()
