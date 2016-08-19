@@ -1,9 +1,9 @@
 App.SubmitModal = React.createClass({
 
-  handleCheck (e){
-    e.value='1'
+  getInitialState: function() {
+    console.log("in get initial state")
+    return {selectedOption: '0'};
   },
-
   handleSubmit (e) {
     e.preventDefault()
     if (this.refs.antiSpam.getDOMNode().value !== '42') {
@@ -26,8 +26,11 @@ App.SubmitModal = React.createClass({
     }
   },
 
-  handleCheck (e) {
-    return( <popout title='in handleCheck' />);
+  handleOptionChange: function (changeEvent) {
+  console.log("value is: " + changeEvent.target.value);
+  this.setState({
+    selectedOption: changeEvent.target.value
+    });
   },
 
   componentDidMount () {
@@ -45,7 +48,7 @@ App.SubmitModal = React.createClass({
           <div className='row slim-row center-align'>
             <h4>Submit a Business</h4>
             <p>
-              Complete the form below or email <a href='mailto:zakkeener@gmail.com' target='_blank'>zakkeener@gmail.com</a>
+              Complete the form below or email <a href='mailto:utbusinesses@gmail.com' target='_blank'>ut@gmail.com</a>
             </p>
           </div>
           <form ref='submissionForm' onSubmit={this.handleSubmit}>
@@ -105,6 +108,7 @@ App.SubmitModal = React.createClass({
                   <option value='1. Concept'>Concept</option>
                   <option value='2. Working Prototype'>Working Prototype</option>
                   <option value='3. Live'>Live</option>
+                  <option value='4. Abandoned'>Abandoned</option>
                 </select>
               </div>
               <div className='input-field col s12 m6'>
@@ -117,17 +121,19 @@ App.SubmitModal = React.createClass({
                 <select className='browser-default validate' required name='funding_status'>
                   <option value='' defaultValue>Funding Status</option>
                   <option value='1. Bootstrapping'>Bootstrapping</option>
-                  <option value='2. Series A'>Series A</option>
-                  <option value='3. Series B'>Series B</option>
-                  <option value='4. Series c'>Series C</option>
-                  <option value='5. Done'>Done</option>
+                  <option value='2. Seed'>Seed</option>
+                  <option value='3. Series A'>Series A</option>
+                  <option value='4. Series B'>Series B</option>
+                  <option value='5. Series c'>Series C</option>
+                  <option value='6. Done'>Done</option>
                 </select>
               </div>
-              <div className='input-field col s6 m6'>
-                <input type='radio' id='not_hiring' name='hiring_status' value='0' checked='checked'/>
-                <label for='not_hiring'> Not hiring </label>
-                <input type='radio' id='hiring' name='hiring_status' value='1'/>
-                <label for='hiring'> hiring </label>
+              <div className='input-field col s12 m6'>
+                <select className='browser-default validate' required name='hiring_status'>
+                  <option value='' defaultValue>Hiring Status</option>
+                  <option value='0. Not Hiring'>Not hiring</option>
+                  <option value='1. Hiring'>Hiring</option>
+                </select>
               </div>
             </div>
             <div className='row center-align slim-row'>

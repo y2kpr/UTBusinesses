@@ -5,7 +5,8 @@ App.Business = React.createClass({
   productStatusColors: [
     'amber accent-1', // 1. Concept
     'green accent-2', // 2. Working Prototype
-    'light-green accent-3' // 3. Live
+    'light-green accent-3', // 3. Live
+    'grey accent-2' // 4. Abandoned
   ],
 
   fundingStatusColors: [
@@ -20,7 +21,8 @@ App.Business = React.createClass({
   productStatusNames:[
   'Concept',
   'Working prototype',
-  'Live'
+  'Live',
+  'Abandoned'
   ],
 
   fundingStatusNames:[
@@ -42,7 +44,7 @@ App.Business = React.createClass({
         <div className={'card hoverable business-card ' + statusColor}>
           <div className='card-content'>
             <div className='main-section center-align'>
-              <img class='card-img-top center-align' src={this.props.business.logo} height='100' width='100' alt='UT Business'/>
+              <img class='card-img-top center-align' src={this.props.business.logo} height='100' width='100' alt='No Logo Available'/>
               <div className='card-title truncate'>
                 {link ? <a target='_blank' href={link}>{this.props.business.name}</a>
                 : this.props.business.name}
