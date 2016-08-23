@@ -3,29 +3,31 @@ App.Business = React.createClass({
     business: React.PropTypes.object.isRequired
   },
   productStatusColors: [
-    'amber accent-1', // 1. Concept
-    'green accent-2', // 2. Working Prototype
-    'light-green accent-3', // 3. Live
-    'grey accent-2' // 4. Abandoned
+    'grey accent-2', // 1. Abandoned    
+    'amber accent-1', // 2. Concept
+    'green accent-2', // 3. Working Prototype
+    'light-green accent-3', // 4. Live
   ],
 
   fundingStatusColors: [
-    'amber accent-1', // 1. Bootstrapping
-    'teal lighten-3', // 2. Seed
-    'lime lighten-3', // 3. Series A
-    'green darken-3', // 4. Series B
-    'green accent-2', // 5. Series C
-    'light-green accent-3', // 6. Exited
+    'grey accent-2',  // 1. Not Applicable
+    'amber accent-1', // 2. Bootstrapping
+    'teal lighten-3', // 3. Seed
+    'lime lighten-3', // 4. Series A
+    'green darken-3', // 5. Series B
+    'green accent-2', // 6. Series C
+    'light-green accent-3', // 7. Exited
     ],
 
   productStatusNames:[
+  'Abandoned',  
   'Concept',
   'Working prototype',
-  'Live',
-  'Abandoned'
+  'Live'
   ],
 
   fundingStatusNames:[
+  'Not Applicable',
   'Bootstrapping',
   'Seed',
   'Series A',

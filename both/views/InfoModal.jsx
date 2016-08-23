@@ -33,11 +33,11 @@ App.InfoModal = React.createClass({
                 <div className='col s12 m6'>
                   <p>Product Status</p>
                   <ul className='color-list'>
-                    <li className='truncate grey accent-2'>Abandoned</li>
                     <li className='truncate light-green accent-3'>Live</li>
                     <li className='truncate green accent-2'>Working Prototype</li>
                     <li className='truncate green accent-1'>Demo</li>
                     <li className='truncate amber accent-1'>Concept</li>
+                    <li className='truncate grey accent-2'>Abandoned</li>
                 </ul>
                 </div>
                 <div className='col s12 m6'>
@@ -49,6 +49,7 @@ App.InfoModal = React.createClass({
                     <li className='truncate lime lighten-3'>Series A</li>
                     <li className='truncate teal lighten-3'>Seed</li>
                     <li className='truncate amber accent-1'>Bootstrapping</li>
+                    <li className='truncate grey accent-2'>Not Applicable</li>
                   </ul>
                 </div>
                 <p>Toggle between product and funding status on the right side of the webpage</p>

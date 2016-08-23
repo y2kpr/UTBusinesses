@@ -105,10 +105,10 @@ App.SubmitModal = React.createClass({
               <div className='input-field col s12 m6'>
                 <select className='browser-default validate' required name='product_status'>
                   <option value='' defaultValue>Product Status</option>
-                  <option value='1. Concept'>Concept</option>
-                  <option value='2. Working Prototype'>Working Prototype</option>
-                  <option value='3. Live'>Live</option>
-                  <option value='4. Abandoned'>Abandoned</option>
+                  <option value='1. Abandoned'>Abandoned</option>
+                  <option value='2. Concept'>Concept</option>
+                  <option value='3. Working Prototype'>Working Prototype</option>
+                  <option value='4. Live'>Live</option>
                 </select>
               </div>
               <div className='input-field col s12 m6'>
@@ -120,12 +120,13 @@ App.SubmitModal = React.createClass({
               <div className='input-field col s12 m6'>
                 <select className='browser-default validate' required name='funding_status'>
                   <option value='' defaultValue>Funding Status</option>
-                  <option value='1. Bootstrapping'>Bootstrapping</option>
-                  <option value='2. Seed'>Seed</option>
-                  <option value='3. Series A'>Series A</option>
-                  <option value='4. Series B'>Series B</option>
-                  <option value='5. Series c'>Series C</option>
-                  <option value='6. Done'>Done</option>
+                  <option value='1. Not Applicable'>Not Applicable</option> 
+                  <option value='2. Bootstrapping'>Bootstrapping</option>
+                  <option value='3. Seed'>Seed</option>
+                  <option value='4. Series A'>Series A</option>
+                  <option value='5. Series B'>Series B</option>
+                  <option value='6. Series c'>Series C</option>
+                  <option value='7. Exited'>Exited</option>
                 </select>
               </div>
               <div className='input-field col s12 m6'>
