@@ -48,13 +48,13 @@ App.SubmitModal = React.createClass({
           <div className='row slim-row center-align'>
             <h4>Submit a Business</h4>
             <p>
-              Complete the form below or email <a href='mailto:utbusinesses@gmail.com' target='_blank'>ut@gmail.com</a>
+              Complete the form below or email <a href='mailto:utbusinesses@gmail.com' target='_blank'>utbusinesses@gmail.com</a>
             </p>
           </div>
           <form ref='submissionForm' onSubmit={this.handleSubmit}>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
-                <input className='validate' name='business_name' type='text' required maxLength='32'/>
+                <input className='validate' name='name' type='text' required maxLength='32'/>
                 <label>Business Name *</label>
               </div>
               <div className='input-field col s12 m6'>
@@ -64,17 +64,17 @@ App.SubmitModal = React.createClass({
             </div>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
-                <input className='validate' name='contact' type='text' required maxLength='32'/>
+                <input className='validate' name='contact_name' type='text' required maxLength='32'/>
                 <label>Contact Name *</label>
               </div>
               <div className='input-field col s12 m6'>
-                <input className='validate' name='contact_email' type='email' required maxLength='32'/>
+                <input className='validate' name='contact' type='email' required maxLength='32'/>
                 <label>Contact Email *</label>
               </div>
             </div>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
-                <input name='site' type='text' maxLength='64'/>
+                <input name='url' type='text' maxLength='64'/>
                 <label>Site URL</label>
               </div>
               <div className='input-field col s12 m6'>
@@ -84,7 +84,7 @@ App.SubmitModal = React.createClass({
             </div>
             <div className='row slim-row'>
               <div className='input-field col s12 m6'>
-                <input name='founders' type='text' maxLength='64'/>
+                <input name='founder' type='text' maxLength='64'/>
                 <label>Founder(s)</label>
               </div>
               <div className='input-field col s12 m6'>
