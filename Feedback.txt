@@ -1,0 +1,3 @@
+1. if business is abandoned, think about adding why the business was abandoned
+
+2. Send an email to businesses that were not updated recently to update their funding and product status. Have radio buttons within the email. A way: turn a business that wasn't updated for 6 months to abandoned and send an email to them to update their status.

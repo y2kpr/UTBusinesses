@@ -31,7 +31,7 @@ Meteor.methods({
         to: process.env.MAIL_TO,
         from: process.env.MAIL_FROM,
         replyTo: data.contact_email,
-        subject: `New Business Submitted - ${data.business_name}`,
+        subject: `New Business Submitted - ${data.name}`,
         text: `Business needs to be approved and added manually:\n\n ${stringData}\n\n Click this link to approve: ${link}`
       })
     }

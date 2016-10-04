@@ -21,7 +21,6 @@ businesses.route('/', {
 
 businesses.route('/confirmbusiness/:document', {
 	action: function(params, queryParams){
-		console.log('document is: ', params.document);
 		Meteor.call('insertBusiness', params.document);
 	}
 })

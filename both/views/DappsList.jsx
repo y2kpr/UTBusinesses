@@ -159,4 +159,3 @@ App.BusinessesList = React.createClass({
     )
   }
 })
-
