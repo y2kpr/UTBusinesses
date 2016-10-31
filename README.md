@@ -18,24 +18,6 @@ To run the app:
 
 Open your web browser and go to [http://localhost:3000](http://localhost:3000) to see the app running.
 
-## Sync tool
-
-Go the the tool directory:
-
-    $ cd private/sync
-
-Install the Python requirements:
-
-    $ pip install -r requirements.txt
-
-Setup an OAuth2 key for the Google Sheets synchroniztion:
-
-https://gspread.readthedocs.org/en/latest/oauth2.html
-
-Sync:
-
-    $ GOOGLE_APPLICATION_CREDENTIALS=/path/to/google-client-id.json MONGODB_URL=mongodb://127.0.0.1:3001/meteor ./sync.py
-
 ## License
 
 Released under the MIT License.
