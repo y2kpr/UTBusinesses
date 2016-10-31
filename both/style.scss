@@ -43,6 +43,16 @@ footer.white-text a, .filter-area a{
   input[type=text].search-box{
     font-size: 2rem;
   }
+
+  .submit-button{
+      margin-bottom: 10px;
+      font-style: bold;
+
+    &:hover{
+      color:#39A7FF;
+    }
+  }
+
   .search-button{
     position: absolute;
     right:10px;
@@ -61,7 +71,8 @@ footer.white-text a, .filter-area a{
       color:#39A7FF;
     }
   }
-  .input-field{
+
+ .input-field{
     padding-right:53px;
   }
 }

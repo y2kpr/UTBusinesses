@@ -11,6 +11,15 @@ App.SearchBox = React.createClass({
     $(this.refs.infoButton.getDOMNode()).leanModal()
   },
 
+  clickSubmitBusiness (e) {
+    e.preventDefault()
+    $('#infoModal').closeModal({
+      complete: function () {
+        $('#submitModal').openModal()
+      }
+    })
+  },
+
   render () {
     return (
       <div className='row search-area'>
@@ -20,6 +29,9 @@ App.SearchBox = React.createClass({
           <label>Search</label>
         </div>
         <i ref='infoButton' className='fa fa-fw fa-info-circle info-button search-button' data-target='infoModal'></i>
+	<div className='col s12'>
+          <strong ref='submitButton' className='btn btn-lg btn-block submit-button red-2' onClick={this.clickSubmitBusiness}>SUBMIT YOUR BUSINESS</strong>
+	</div>
       </div>
     )
   }
