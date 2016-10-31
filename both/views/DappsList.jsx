@@ -132,14 +132,14 @@ App.BusinessesList = React.createClass({
         </div>
         < App.InfoModal />
 
-        <div className='black'>
+        <div className='cream'>
           <div className='row'>
             < App.FilterArea data={this.data} />
             <section ref='businessesection' className='businesses row'>
               {this.renderBusinesses()}
             </section>
           </div>
-          <footer className='white-text center-align'>
+          <footer className='black-text center-align'>
             <div className='row'>
               <div className='col s12 m4'>
                 Service by <a target='_blank' href='http://utlea.org/'>UT LEA</a>

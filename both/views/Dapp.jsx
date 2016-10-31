@@ -3,20 +3,20 @@ App.Business = React.createClass({
     business: React.PropTypes.object.isRequired
   },
   productStatusColors: [
-    'grey accent-2', // 1. Abandoned    
-    'amber accent-1', // 2. Concept
-    'green accent-2', // 3. Working Prototype
-    'light-green accent-3', // 4. Live
+    'red-1', // 1. Abandoned    
+    'yellow-1', // 2. Concept
+    'med2-green', // 3. Working Prototype    
+    'dark-green', // 4. Live
   ],
 
   fundingStatusColors: [
-    'grey accent-2',  // 1. Not Applicable
-    'amber accent-1', // 2. Bootstrapping
-    'teal lighten-3', // 3. Seed
-    'lime lighten-3', // 4. Series A
-    'green darken-3', // 5. Series B
-    'green accent-2', // 6. Series C
-    'light-green accent-3', // 7. Exited
+    'red-1',  // 1. Not Applicable
+    'yellow-1', // 2. Bootstrapping
+    'light-green', // 3. Seed
+    'med1-green', // 4. Series A
+    'med2-green', // 5. Series B
+    'med3-green', // 6. Series C
+    'dark-green', // 7. Exited
     ],
 
   productStatusNames:[
@@ -39,11 +39,12 @@ App.Business = React.createClass({
   render () {
     var statusColor = Session.equals("searchSortType", "funding_status") ? this.fundingStatusColors[parseInt(this.props.business.funding_status[0], 10) - 1] : this.productStatusColors[parseInt(this.props.business.product_status[0], 10) - 1]
     var statusName = Session.equals("searchSortType", "funding_status") ? this.fundingStatusNames[parseInt(this.props.business.funding_status[0], 10) - 1] : this.productStatusNames[parseInt(this.props.business.product_status[0], 10) - 1]
+    var textColor = statusColor == 'dark-green' ? 'white-text' : 'black-text'
     var link = this.props.business.url
     var contact = "mailto:" + this.props.business.contact
     return (
       <div className='col ms12 m4 l3 xl4 xxl1'>
-        <div className={'card hoverable business-card ' + statusColor}>
+        <div className={'card hoverable business-card ' + statusColor + ' ' + textColor}>
           <div className='card-content'>
             <div className='main-section center-align'>
               <img class='card-img-top center-align' src={this.props.business.logo} height='100' width='100' alt='No Logo Available'/>

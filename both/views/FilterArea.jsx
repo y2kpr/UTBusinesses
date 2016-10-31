@@ -46,12 +46,12 @@ App.FilterArea = React.createClass({
     return (
       <div>
         {this.props.data.businesses.length &&
-          <div className='filter-area white-text'>
+          <div className='filter-area black-text'>
             <div className='col s5'>
               {this.props.data.count} Businesses {this.props.data.resultType}
             </div>
             <div className='col s7 right-align'>
-              Sort: <a href='#' onClick={this.handleToggleType}>{this.sortType()}</a>
+              Sort: <a color='black' href='#' onClick={this.handleToggleType}>{this.sortType()}</a>
               <i onClick={this.handleToggleDirection} className={'sort-direction fa fa-sort-amount-' + this.sortDirection()}></i>
             </div>
           </div>

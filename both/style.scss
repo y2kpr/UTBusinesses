@@ -6,7 +6,7 @@ html {
   font-weight:300;
 }
 body{
-  background: #FAFAFA;
+  background: #D5AF2E;
 }
 b {
   font-weight:700;
@@ -39,6 +39,8 @@ footer.white-text a, .filter-area a{
   i.fa.prefix{
     font-size: 1.5rem;
     line-height: 3rem;
+    font-color: black;
+    top: 5px;
   }
   input[type=text].search-box{
     font-size: 2rem;
@@ -46,7 +48,7 @@ footer.white-text a, .filter-area a{
   .search-button{
     position: absolute;
     right:10px;
-    top:16px;
+    top:20px;
     font-size:24px;
     line-height:43px;
     width:43px;
@@ -63,6 +65,7 @@ footer.white-text a, .filter-area a{
   }
   .input-field{
     padding-right:53px;
+    margin-bottom:25px;
   }
 }
 
@@ -85,6 +88,10 @@ footer.white-text a, .filter-area a{
     cursor:pointer;
     padding: 2px 7px;
   }
+}
+
+a {
+	color: #00f;
 }
 
 /* individual business card */
