@@ -26,7 +26,7 @@ Meteor.methods({
 
     if (Meteor.isServer) {
       var stringData = EJSON.stringify(data, null, 2);
-      var link = Meteor.absoluteUrl() + '/businesses/confirmbusiness/' + encodeURIComponent(stringData);
+      var link = process.env.BASE_URL + '/businesses/confirmbusiness/' + encodeURIComponent(stringData);
       Email.send({
         to: process.env.MAIL_TO,
         from: process.env.MAIL_FROM,

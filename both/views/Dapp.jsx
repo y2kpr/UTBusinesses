@@ -61,8 +61,7 @@ App.Business = React.createClass({
             </div>
             <div className='section status-section'>
               <p className='center-align'>
-                {this.props.business.hiring_status == '0' ? "not hiring" : "is hiring"}
-                
+                {this.props.business.hiring_status.includes("0") ? "not hiring" : "is hiring"}
               </p>
               <p className='status truncate center-align'>
                 <a href={contact}>Contact</a>
